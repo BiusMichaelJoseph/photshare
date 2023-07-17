@@ -22,52 +22,28 @@
                       Category
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">All</li>
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                      <a href="{% url 'add' %}" class="btn btn-dark btn-sm m-1">Add Photo</a>
+                      <li class="list-group-item">All</li>
+                      {% for Category in categories %}
+                      <li class="list-group-item">{{ Category.name }}</li>
+                      {% endfor %}
                     </ul>
                   </div>
             </div>
             <div class="col-md-9">
                 <div class="row">
+                  {% for Photos in Photos %}
                     <div class="col-md-4">
                         <div class="card my-2">
-                            <img class="image-thumbnail" src="https://lh3.googleusercontent.com/pw/AJFCJaXRpC8HrjJKLfUx0L-MeTFJSWxdtJgNjuSXYvJ5eudgJzhoeabkMomS7M9AKiD7MjaQhaISb13Hoj8YwjlMRQjjW7c65yDsOAlzYJkAY1Rw7J9wPzv3rOtpZsvFn6qInufkob49JySEL1upXuxXAQ-EjE13o-4aG6cHrtEVGJXedIqT3Ixb7IF29sGHa7amvuTDYObU1Ebrin28VC3Mfww5YYR21y_th9y_-ERVqFbkjh0_-lxukOBRWvUtEmAcPSmCybCh7LZmI5C65hYB28NwHoAsQ0tbHMVtn9tRduA28j-vASlrsqgCbzwSkXpQDhJ3NGlbi06T8vH_o8BmyvlfdlIMpD_uV24Ng_s-g6-t9rDT2Lv000XccwQ30a02bU_9ODgStTjfSmTrJu7MfxTYjAW432vgcWTE_e-g38Ct-AKJIkItQDvrdO83JLxuBzHl2DEKO_vABd6QGbSjdPzHGZmuAg7ojukz5rTDcdu3zE9E9EcTcqESAbo42RNvTFBvKDvBC0TP2CaLjd_DCpkqX_VKr-cnxqZlMMgp2rpcVA0hvzvMN1XtlXFFztqjFRun6hj8zyyrGYcYhDTAoITclT5E_sVWLsRx7R99oyEhO5yR7OwUmeE0Lt1Bhd1ESNIB5BydPP4ADD5SsceuLJuisJloN2Yhmxf132k_w_2wgNMM_WGdbqggJWEXymonO5PV-QLk2rQOF7daKchjVt5OW7GqZ9ysvct7rW2sl21cEAzfk5lBQy0iCfTH54NHXWgUU4s7-HemGc-FY1Y17hjR5MsdCZakQ4ZVstoBFe4ziJUPoKEGYHgoCmpkPqHrBOndmpjR7tmxodEjgrgZG4dNZLszTUxkRM6gjXY3iXJiSGXVIewhlpj4ixseovUeEGL8SnopOPbC6oOtXbrsi3GnkL4RFzgffT2qC8uGSgpWwnoEDoWGUzL-xDmDtwOt_uyjrNI609BY6KVB1WSgBCUw6ENw-iI=w1043-h695-s-no?authuser=0" alt="Card image cap">
-                            <div class="card-body">
-                              <small>Category: Childrens' Home</small>
-                            </div>
-                            <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://lh3.googleusercontent.com/pw/AJFCJaXRpC8HrjJKLfUx0L-MeTFJSWxdtJgNjuSXYvJ5eudgJzhoeabkMomS7M9AKiD7MjaQhaISb13Hoj8YwjlMRQjjW7c65yDsOAlzYJkAY1Rw7J9wPzv3rOtpZsvFn6qInufkob49JySEL1upXuxXAQ-EjE13o-4aG6cHrtEVGJXedIqT3Ixb7IF29sGHa7amvuTDYObU1Ebrin28VC3Mfww5YYR21y_th9y_-ERVqFbkjh0_-lxukOBRWvUtEmAcPSmCybCh7LZmI5C65hYB28NwHoAsQ0tbHMVtn9tRduA28j-vASlrsqgCbzwSkXpQDhJ3NGlbi06T8vH_o8BmyvlfdlIMpD_uV24Ng_s-g6-t9rDT2Lv000XccwQ30a02bU_9ODgStTjfSmTrJu7MfxTYjAW432vgcWTE_e-g38Ct-AKJIkItQDvrdO83JLxuBzHl2DEKO_vABd6QGbSjdPzHGZmuAg7ojukz5rTDcdu3zE9E9EcTcqESAbo42RNvTFBvKDvBC0TP2CaLjd_DCpkqX_VKr-cnxqZlMMgp2rpcVA0hvzvMN1XtlXFFztqjFRun6hj8zyyrGYcYhDTAoITclT5E_sVWLsRx7R99oyEhO5yR7OwUmeE0Lt1Bhd1ESNIB5BydPP4ADD5SsceuLJuisJloN2Yhmxf132k_w_2wgNMM_WGdbqggJWEXymonO5PV-QLk2rQOF7daKchjVt5OW7GqZ9ysvct7rW2sl21cEAzfk5lBQy0iCfTH54NHXWgUU4s7-HemGc-FY1Y17hjR5MsdCZakQ4ZVstoBFe4ziJUPoKEGYHgoCmpkPqHrBOndmpjR7tmxodEjgrgZG4dNZLszTUxkRM6gjXY3iXJiSGXVIewhlpj4ixseovUeEGL8SnopOPbC6oOtXbrsi3GnkL4RFzgffT2qC8uGSgpWwnoEDoWGUzL-xDmDtwOt_uyjrNI609BY6KVB1WSgBCUw6ENw-iI=w1043-h695-s-no?authuser=0" alt="Card image cap">
+                            <img class="image-thumbnail" src="{{ photo.image.url }}" alt="Card image cap">
                             <div class="card-body">
                               <small>Category: Childrens' Home</small>
                             </div>
                             <a href="" class="btn btn-outline-dark btn-sm m-1">View</a>
                           </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://lh3.googleusercontent.com/pw/AJFCJaXRpC8HrjJKLfUx0L-MeTFJSWxdtJgNjuSXYvJ5eudgJzhoeabkMomS7M9AKiD7MjaQhaISb13Hoj8YwjlMRQjjW7c65yDsOAlzYJkAY1Rw7J9wPzv3rOtpZsvFn6qInufkob49JySEL1upXuxXAQ-EjE13o-4aG6cHrtEVGJXedIqT3Ixb7IF29sGHa7amvuTDYObU1Ebrin28VC3Mfww5YYR21y_th9y_-ERVqFbkjh0_-lxukOBRWvUtEmAcPSmCybCh7LZmI5C65hYB28NwHoAsQ0tbHMVtn9tRduA28j-vASlrsqgCbzwSkXpQDhJ3NGlbi06T8vH_o8BmyvlfdlIMpD_uV24Ng_s-g6-t9rDT2Lv000XccwQ30a02bU_9ODgStTjfSmTrJu7MfxTYjAW432vgcWTE_e-g38Ct-AKJIkItQDvrdO83JLxuBzHl2DEKO_vABd6QGbSjdPzHGZmuAg7ojukz5rTDcdu3zE9E9EcTcqESAbo42RNvTFBvKDvBC0TP2CaLjd_DCpkqX_VKr-cnxqZlMMgp2rpcVA0hvzvMN1XtlXFFztqjFRun6hj8zyyrGYcYhDTAoITclT5E_sVWLsRx7R99oyEhO5yR7OwUmeE0Lt1Bhd1ESNIB5BydPP4ADD5SsceuLJuisJloN2Yhmxf132k_w_2wgNMM_WGdbqggJWEXymonO5PV-QLk2rQOF7daKchjVt5OW7GqZ9ysvct7rW2sl21cEAzfk5lBQy0iCfTH54NHXWgUU4s7-HemGc-FY1Y17hjR5MsdCZakQ4ZVstoBFe4ziJUPoKEGYHgoCmpkPqHrBOndmpjR7tmxodEjgrgZG4dNZLszTUxkRM6gjXY3iXJiSGXVIewhlpj4ixseovUeEGL8SnopOPbC6oOtXbrsi3GnkL4RFzgffT2qC8uGSgpWwnoEDoWGUzL-xDmDtwOt_uyjrNI609BY6KVB1WSgBCUw6ENw-iI=w1043-h695-s-no?authuser=0" alt="Card image cap">
-                            <div class="card-body">
-                              <small>Category: Childrens' Home</small>
-                            </div>
-                            <a href="" class="btn btn-outline-dark btn-sm m-1">View</a>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://lh3.googleusercontent.com/pw/AJFCJaXRpC8HrjJKLfUx0L-MeTFJSWxdtJgNjuSXYvJ5eudgJzhoeabkMomS7M9AKiD7MjaQhaISb13Hoj8YwjlMRQjjW7c65yDsOAlzYJkAY1Rw7J9wPzv3rOtpZsvFn6qInufkob49JySEL1upXuxXAQ-EjE13o-4aG6cHrtEVGJXedIqT3Ixb7IF29sGHa7amvuTDYObU1Ebrin28VC3Mfww5YYR21y_th9y_-ERVqFbkjh0_-lxukOBRWvUtEmAcPSmCybCh7LZmI5C65hYB28NwHoAsQ0tbHMVtn9tRduA28j-vASlrsqgCbzwSkXpQDhJ3NGlbi06T8vH_o8BmyvlfdlIMpD_uV24Ng_s-g6-t9rDT2Lv000XccwQ30a02bU_9ODgStTjfSmTrJu7MfxTYjAW432vgcWTE_e-g38Ct-AKJIkItQDvrdO83JLxuBzHl2DEKO_vABd6QGbSjdPzHGZmuAg7ojukz5rTDcdu3zE9E9EcTcqESAbo42RNvTFBvKDvBC0TP2CaLjd_DCpkqX_VKr-cnxqZlMMgp2rpcVA0hvzvMN1XtlXFFztqjFRun6hj8zyyrGYcYhDTAoITclT5E_sVWLsRx7R99oyEhO5yR7OwUmeE0Lt1Bhd1ESNIB5BydPP4ADD5SsceuLJuisJloN2Yhmxf132k_w_2wgNMM_WGdbqggJWEXymonO5PV-QLk2rQOF7daKchjVt5OW7GqZ9ysvct7rW2sl21cEAzfk5lBQy0iCfTH54NHXWgUU4s7-HemGc-FY1Y17hjR5MsdCZakQ4ZVstoBFe4ziJUPoKEGYHgoCmpkPqHrBOndmpjR7tmxodEjgrgZG4dNZLszTUxkRM6gjXY3iXJiSGXVIewhlpj4ixseovUeEGL8SnopOPbC6oOtXbrsi3GnkL4RFzgffT2qC8uGSgpWwnoEDoWGUzL-xDmDtwOt_uyjrNI609BY6KVB1WSgBCUw6ENw-iI=w1043-h695-s-no?authuser=0" alt="Card image cap">
-                            <div class="card-body">
-                              <small>Category: Childrens' Home</small>
-                            </div>
-                            <a href="" class="btn btn-outline-dark btn-sm m-1">View</a>
-                          </div>
-                    </div>
+                  {% empty %}
+                  <h3>No Photo</h3>
+                  {% endfor %}
                 </div>
             </div>
         </div>

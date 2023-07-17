@@ -1,9 +1,11 @@
 from django.shortcuts import render
-
-from django.contrib.auth.models import User
+from .models import Category, Photo
 
 def gallery(request):
-    return render(request, 'photos/gallery.html')
+    categories = Category.objects.all()
+    Photos = Photos.object.all()
+    context = { "categories" : categories,"Photos":Photos }
+    return render(request, 'photos/gallery.html', context)
 
 
 def addPhoto(request):
