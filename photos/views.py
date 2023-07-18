@@ -3,8 +3,8 @@ from .models import Category, Photo
 
 def gallery(request):
     categories = Category.objects.all()
-    Photos = Photos.object.all()
-    context = { "categories" : categories,"Photos":Photos }
+    photos = Photos.object.all()
+    context = { "categories" : categories,"photos":photos }
     return render(request, 'photos/gallery.html', context)
 
 
