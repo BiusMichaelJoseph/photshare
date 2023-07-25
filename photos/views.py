@@ -8,8 +8,9 @@ def gallery(request):
     return render(request, 'photos/gallery.html', context)
 
 
-def addPhoto(request):
-    return render(request, 'photos/add.html')
+def addPhoto(request, pk):
+    photo = Photo.objects.get(id=pk)
+    return render(request, 'photos/add.html', {'photo':photo})
 
 def viewPhoto(request, pk):
     return render(request, 'photos/photo.html')

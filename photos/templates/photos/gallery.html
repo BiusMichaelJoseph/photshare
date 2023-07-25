@@ -33,12 +33,12 @@
                 <div class="row">
                   {% for Photos in photos %}
                     <div class="col-md-4">
-                        <div class="card my-2">
+                        <div class="card">
                             <img class="image-thumbnail" src="{{ photo.image.url }}" alt="Card image cap">
                             <div class="card-body">
-                              <small>Category: Childrens' Home</small>
+                              <small>Category: {{ photo.Category.name }}</small>
                             </div>
-                            <a href="" class="btn btn-outline-dark btn-sm m-1">View</a>
+                            <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
                           </div>
                     </div>
                   {% empty %}
