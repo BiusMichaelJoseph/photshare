@@ -34,11 +34,11 @@
                   {% for Photos in photos %}
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="image-thumbnail" src="{{ photo.image.url }}" alt="Card image cap">
+                            <img class="image-thumbnail" src="{{ Photo.image.url }}" alt="Card image cap">
                             <div class="card-body">
-                              <small>Category: {{ photo.Category.name }}</small>
+                              <small>Category: {{ Photo.Category.name }}</small>
                             </div>
-                            <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+                            <a href="{% url 'photo.html' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
                           </div>
                     </div>
                   {% empty %}
