@@ -14,9 +14,10 @@
                 <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>
                 <div class="card">
                     <form method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="form-group mb-3">
                             <label  class="form-label">Description</label>
-                            <input name="Description" class="form-control" type="text" placeholder="Add a description">
+                            <input required name="Description" class="form-control" type="text" placeholder="Add a description">
                         </div>
                         <div class="form-group mb-3">
                             <label for="formFile" class="form-label">select a category</label>
@@ -32,7 +33,7 @@
                          </div>
                           <div class="form-group mb-3">
                             <label for="formFile" class="form-label">Upload Image</label>
-                            <input name="Image" class="form-control" type="file" id="formFile">
+                            <input required name="Image" class="form-control" type="file" id="formFile">
                           </div>
                         <button type="submit" class="btn btn-primary m-3">Submit</button>
                     </form>
